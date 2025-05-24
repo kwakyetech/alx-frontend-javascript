@@ -1,0 +1,20 @@
+// Define the Teacher interface
+interface Teacher {
+  readonly firstName: string;               // Can only be assigned during initialization
+  readonly lastName: string;                // Same as above
+  fullTimeEmployee: boolean;                // Always required
+  yearsOfExperience?: number;               // Optional
+  location: string;                         // Always required
+  [key: string]: any;                       // Allows any additional dynamic properties
+}
+
+// Create an object of type Teacher
+const teacher3: Teacher = {
+  firstName: 'John',
+  lastName: 'Doe',
+  fullTimeEmployee: false,
+  location: 'London',
+  contract: false, // extra property not declared, but accepted due to index signature
+};
+
+console.log(teacher3);
